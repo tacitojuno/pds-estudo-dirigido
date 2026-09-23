@@ -1,0 +1,30 @@
+version: 1
+
+project:
+  id: e8a4b3d2-7f9c-4123-b1a9-8d5c4e7f6a21
+  title: Processamento Digital de Sinais
+  description: Estudo Dirigido - Parte 1
+  keywords: [Sinais, DSP, Sistemas LTI, Amostragem]
+  authors:
+    - Tácito Juno
+
+  toc:
+    - file: README.md
+    - file: parte_1/index.md
+      children:
+        - file: parte_1/relatorio_parte_1.md
+        - file: parte_1/01_sinais_discretos/relatorio_sinais.md
+
+  settings:
+    myst_to_tex:
+      code_style: listings
+    output_stdout: show
+    output_stderr: remove
+    output_matplotlib_strings: remove
+
+site:
+  template: book-theme
+  options:
+    logo_text: PDS - Estudo Dirigido
+    # style: _static/site.css  # Descomentar após fazer o CSS
+    outline_maxdepth: 3
