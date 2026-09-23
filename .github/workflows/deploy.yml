@@ -30,6 +30,8 @@ jobs:
         run: npm install -g mystmd
 
       - name: Construir o site HTML
+        env:
+          BASE_URL: /pds-estudo-dirigido
         run: myst build --html
 
       - name: Fazer upload do artefato
