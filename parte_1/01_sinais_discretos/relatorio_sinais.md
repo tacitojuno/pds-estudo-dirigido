@@ -1,4 +1,8 @@
-# Sinais Contínuos e Discretos
+---
+title: Tópico 1 - Sinais Contínuos e Discretos
+---
+
+# Tópico 1 - Sinais Contínuos e Discretos
 
 ---
 
