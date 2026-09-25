@@ -15,6 +15,7 @@ project:
         - file: parte_1/relatorio_parte_1.md
         - file: parte_1/01_sinais_discretos/relatorio_sinais.md
         - file: parte_1/02_amostragem/relatorio_amostragem.md
+        - file: parte_1/03_quantizacao/relatorio_quantizacao.md
 
   settings:
     myst_to_tex:
