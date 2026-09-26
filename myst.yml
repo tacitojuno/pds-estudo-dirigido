@@ -17,6 +17,7 @@ project:
         - file: parte_1/02_amostragem/relatorio_amostragem.md
         - file: parte_1/03_quantizacao/relatorio_quantizacao.md
         - file: parte_1/04_sequencias/relatorio_sequencias.md
+        - file: parte_1/05_operacoes/relatorio_operacoes.md
 
   settings:
     myst_to_tex:
