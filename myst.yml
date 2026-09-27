@@ -19,6 +19,7 @@ project:
         - file: parte_1/04_sequencias/relatorio_sequencias.md
         - file: parte_1/05_operacoes/relatorio_operacoes.md
         - file: parte_1/06_energia_potencia/relatorio_energia_potencia.md
+        - file: parte_1/07_sistemas/relatorio_sistemas.md
 
   settings:
     myst_to_tex:
