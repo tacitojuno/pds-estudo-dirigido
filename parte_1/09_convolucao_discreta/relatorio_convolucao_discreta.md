@@ -1,8 +1,8 @@
 ---
-title: Tópico 8 - Convolução Discreta
+title: Tópico 9 - Convolução Discreta
 ---
 
-# Tópico 8 - Convolução Discreta
+# Tópico 9 - Convolução Discreta
 
 ---
 
