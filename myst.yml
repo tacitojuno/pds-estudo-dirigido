@@ -19,8 +19,10 @@ project:
         - file: parte_1/04_sequencias/relatorio_sequencias.md
         - file: parte_1/05_operacoes/relatorio_operacoes.md
         - file: parte_1/06_energia_potencia/relatorio_energia_potencia.md
-        - file: parte_1/07_sistemas/relatorio_sistemas.md
-        - file: parte_1/08_convolucao/relatorio_convolucao.md
+        - file: parte_1/07_sistemas_discretos/relatorio_sistemas_discretos.md
+        - file: parte_1/08_sistemas_lti/relatorio_sistemas_lti.md
+        - file: parte_1/09_convolucao_discreta/relatorio_convolucao_discreta.md
+        - file: parte_1/10_convolucao_filtragem/relatorio_convolucao_filtragem.md
 
   settings:
     myst_to_tex:
