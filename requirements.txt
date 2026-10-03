@@ -3,3 +3,7 @@ matplotlib
 scipy
 jupyter
 mystmd
+librosa
+noisereduce
+IPython
+soundfile
