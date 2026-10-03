@@ -23,6 +23,7 @@ project:
         - file: parte_1/08_sistemas_lti/relatorio_sistemas_lti.md
         - file: parte_1/09_convolucao_discreta/relatorio_convolucao_discreta.md
         - file: parte_1/10_convolucao_filtragem/relatorio_convolucao_filtragem.md
+        - file: parte_1/mini_projeto/relatorio_mini_projeto.md
 
   settings:
     myst_to_tex:
