@@ -19,6 +19,20 @@ Os parâmetros utilizados têm o seguinte significado físico:
 - **Amplitudes ($A_1=1.0$, $A_2=0.5$):** Representam a intensidade relativa de cada componente de frequência, dando à "nota" a sua cor (timbre).
 - **Frequências ($f_1=440$ Hz, $f_2=880$ Hz):** Representam a fundamental (Nota Lá - A4) e o primeiro harmônico (uma oitava acima).
 
+**Trecho de Código (Modelagem e Geração):**
+```python
+import numpy as np
+
+# Parâmetros do modelo
+A1 = 1.0; f1 = 440.0
+A2 = 0.5; f2 = 880.0
+
+# Simulação do sinal "contínuo" (resolução muito alta)
+fs_cont = 100000  # 100 kHz para simular contínuo
+t_cont = np.arange(0, 2.0, 1/fs_cont) # 2 segundos de áudio
+x_cont = A1 * np.sin(2 * np.pi * f1 * t_cont) + A2 * np.sin(2 * np.pi * f2 * t_cont)
+```
+
 ![Sinal Contínuo](figuras/01_sinal_continuo.png)
 
 Ouça o sinal original gerado:
@@ -30,6 +44,15 @@ Ouça o sinal original gerado:
 
 Para realizar a análise digital do sinal contínuo, definiu-se a frequência de amostragem como $f_s = 8000$ Hz. Pelo Teorema de Nyquist, a taxa de amostragem deve ser maior que $2 \times f_{max}$ (no nosso caso, $2 \times 880 = 1760$ Hz). Escolher 8000 Hz garante uma margem segura, típica de áudio padrão telefônico.
 O intervalo de amostragem é $T_s = \frac{1}{8000} = 0,000125$ s. O sinal amostrado obedece à equação $x[n] = x(nT_s)$.
+
+**Trecho de Código (Amostragem):**
+```python
+fs = 8000
+Ts = 1.0 / fs
+n = np.arange(0, int(2.0 * fs)) # Índices discretos para 2 segundos
+t_disc = n * Ts
+x_disc = A1 * np.sin(2 * np.pi * f1 * t_disc) + A2 * np.sin(2 * np.pi * f2 * t_disc)
+```
 
 ![Amostragem](figuras/02_amostragem.png)
 
@@ -43,6 +66,19 @@ A amplitude do sinal contínuo oscila no intervalo de $[-1.5, 1.5]$. Simulamos a
 
 No gráfico, nota-se que a versão em 4 bits gera "degraus" imprecisos (que produzem muito ruído de quantização). A versão de 8 bits reconstrói o sinal de modo muito fiel ao original, tornando os "degraus" praticamente imperceptíveis.
 
+**Trecho de Código (Quantização):**
+```python
+def quantizar(sinal, bits, vmin=-1.5, vmax=1.5):
+    n_niveis = 2**bits
+    delta = (vmax - vmin) / n_niveis
+    # Normaliza e arredonda
+    sinal_q = np.round((np.clip(sinal, vmin, vmax) - vmin) / delta) * delta + vmin
+    return sinal_q
+
+x_q4 = quantizar(x_disc, 4)
+x_q8 = quantizar(x_disc, 8)
+```
+
 ![Quantização](figuras/03_quantizacao.png)
 
 ---
@@ -54,6 +90,13 @@ O sinal resultante é dado por:
 $$x_r[n] = x_{q8}[n] + r[n]$$
 
 A amplitude e tipo de ruído (ruído branco) foram selecionados para afetar um espectro amplo de frequências de modo consistente, imitando estática ou ruído térmico num circuito elétrico, sem distorcer as componentes principais.
+
+**Trecho de Código (Inclusão de Ruído):**
+```python
+np.random.seed(42) # Para reprodutibilidade
+ruido = np.random.normal(0, 0.3, len(x_q8))
+xr = x_q8 + ruido
+```
 
 ![Inclusão de Ruído](figuras/04_inclusao_ruido.png)
 
@@ -69,6 +112,15 @@ $$h[n] = \frac{1}{M} \{1, 1, \dots, 1\}$$
 
 Escolheu-se **$M = 7$**. 
 A escolha justifica-se no domínio da frequência: uma janela $M=7$ para a taxa de $f_s=8000$ Hz tem seu primeiro nulo em $8000/7 \approx 1142$ Hz. Como nossa frequência mais alta de interesse (harmônico) é 880 Hz, esse tamanho de janela suaviza o pico sem esmagar demais o som original da nota, atuando como um filtro passa-baixas moderado. A convolução $y[n] = x_r[n] * h[n]$ suavizou as flutuações rápidas.
+
+**Trecho de Código (Filtro LTI):**
+```python
+M = 7
+h = np.ones(M) / M
+
+# Processamento: Convolução de xr com h
+y_filtrado = np.convolve(xr, h, mode='same')
+```
 
 ![Filtragem LTI](figuras/05_filtragem_lti.png)
 
@@ -117,4 +169,4 @@ Com base nas experimentações:
 12. **Como o modelo poderia ser melhorado?**
     Substituir a média móvel por filtros digitais baseados em IIR (como Butterworth) ou FIR avançados (com janelamento de Hanning/Hamming), possibilitando cortes bruscos projetados com precisão no espectro de frequência. Para ruídos sobrepostos à voz, técnicas de "Subtração Espectral" poderiam ser empregadas.
 
-*(Obs: Todos os códigos e representações detalhadas da simulação encontram-se disponíveis no arquivo executável `mini_projeto.ipynb` e, quando compilados, as saídas interativas estão integradas na documentação).*
+*(Obs: Todos os códigos completos e representações detalhadas da simulação encontram-se disponíveis e executáveis no arquivo `mini_projeto.ipynb` presente no repositório).*
