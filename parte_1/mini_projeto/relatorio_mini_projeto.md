@@ -1,3 +1,7 @@
+---
+title: "Relatório: Mini Projeto Integrador (Parte 1)"
+---
+
 # Relatório: Mini Projeto Integrador (Parte 1)
 
 **Simulação de um Sistema de Aquisição e Processamento de Sinais**
