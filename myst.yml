@@ -25,6 +25,13 @@ project:
         - file: parte_1/10_convolucao_filtragem/relatorio_convolucao_filtragem.md
         - file: parte_1/mini_projeto/relatorio_mini_projeto.md
 
+    - file: parte_2/index.md  
+      children:
+        - file: parte_2/relatorio_parte_2.md
+        - file: parte_2/01_frequencias_exponenciais/relatorio_frequencias_exponenciais.md
+        - file: parte_2/02_transformada_fourier_discreto/relatorio_transformada_fourier_discreto.md
+    
+
   settings:
     myst_to_tex:
       code_style: listings
