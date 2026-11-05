@@ -33,8 +33,8 @@ project:
         - file: parte_2/03_dft/relatorio_dft.md
         - file: parte_2/04_fft/relatorio_fft.md
         - file: parte_2/05_resolucao_espectral/relatorio_resolucao_espectral.md
-        - file: parte_2/06_frequencia_normalizada.md
-        - file: parte_2/07_teorema_amostragem.md
+        - file: parte_2/06_frequencia_normalizada/relatorio_frequencia_normalizada.md
+        - file: parte_2/07_teorema_amostragem/relatorio_teorema_amostragem.md
 
   settings:
     myst_to_tex:
