@@ -34,7 +34,10 @@ project:
         - file: parte_2/04_fft/relatorio_fft.md
         - file: parte_2/05_resolucao_espectral/relatorio_resolucao_espectral.md
         - file: parte_2/06_frequencia_normalizada/relatorio_frequencia_normalizada.md
-        - file: parte_2/07_teorema_amostragem/relatorio_teorema_amostragem.md
+        - file: parte_2/07_teorema_amostragem_nyquist/relatorio_teorema_amostragem_nyquist.md
+        - file: parte_2/08_aliasing/relatorio_aliasing.md
+        - file: parte_2/09_janelamento_vazamento_espectral/relatorio_janelamento_vazamento_espectral.md
+        - file: parte_2/10_transformada_laplace/relatorio_transformada_laplace.md
 
   settings:
     myst_to_tex:
