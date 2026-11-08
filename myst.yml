@@ -38,6 +38,14 @@ project:
         - file: parte_2/08_aliasing/relatorio_aliasing.md
         - file: parte_2/09_janelamento_vazamento_espectral/relatorio_janelamento_vazamento_espectral.md
         - file: parte_2/10_transformada_laplace/relatorio_transformada_laplace.md
+        - file: parte_2/11_funcao_transferencia/relatorio_funcao_transferencia.md
+        - file: parte_2/12_polos_zeros_estabilidade_plano_s/relatorio_polos_zeros_estabilidade_plano_s.md
+        - file: parte_2/13_transformada_z/relatorio_transformada_z.md
+        - file: parte_2/14_regiao_convergencia/relatorio_regiao_convergencia.md
+        - file: parte_2/15_funcao_transferencia_discreta/relatorio_funcao_transferencia_discreta.md
+        - file: parte_2/16_estabilidade_plano_z/relatorio_estabilidade_plano_z.md
+        - file: parte_2/17_relacao_transformada_z_dtft/relatorio_relacao_transformada_z_dtft.md
+        - file: parte_2/18_relacao_laplace_transformada_z/relatorio_relacao_laplace_transformada_z.md
 
   settings:
     myst_to_tex:
