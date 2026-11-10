@@ -7,7 +7,7 @@ O material está organizado em partes, cada uma cobrindo um conjunto de tópicos
 | Parte | Tema Central | Status |
 |-------|-------------|--------|
 | **Parte 1** | Aquisição, Processamento e Representação de sinais | ✅ Concluída |
-| **Parte 2** | *(em desenvolvimento)* | 🔒 Em breve |
+| **Parte 2** | Fourier, Laplace, Transformada-Z e Análise de Sistemas| ✅ Concluída |
 | **Parte 3** | *(em desenvolvimento)* | 🔒 Em breve |
 
 ## O que você encontra aqui
@@ -22,9 +22,18 @@ A **Parte 1** abrange os pilares fundamentais do PDS, incluindo:
 - **Convolução discreta** e aplicação em **filtragem**
 - **Mini-projeto** integrando os conceitos estudados
 
+A **Parte 2** abrange os pilares fundamentais do PDS, incluindo:
+
+- Transformada de Fourier
+- Transformada de Laplace
+- Transformada-Z
+- Análise de Sistemas
+- **Mini-projeto** integrando os conceitos estudados
+
+
 ## Navegação
 
-Use o **menu lateral** para acessar cada seção. Dentro da Parte 1, há tanto um relatório geral quanto relatórios individuais por tópico, com código Python, gráficos e análises.
+Use o **menu lateral** para acessar cada seção. Dentro de cada parte, há tanto um relatório geral quanto relatórios individuais por tópico, com código Python, gráficos e análises.
 
 ---
 
