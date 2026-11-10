@@ -46,6 +46,7 @@ project:
         - file: parte_2/16_estabilidade_plano_z/relatorio_estabilidade_plano_z.md
         - file: parte_2/17_relacao_transformada_z_dtft/relatorio_relacao_transformada_z_dtft.md
         - file: parte_2/18_relacao_laplace_transformada_z/relatorio_relacao_laplace_transformada_z.md
+        - file: parte_2/mini_projeto/relatorio_mini_projeto.md
 
   settings:
     myst_to_tex:
